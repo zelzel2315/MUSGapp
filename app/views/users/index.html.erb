@@ -1,0 +1,9 @@
+<h1>User#index</h1>
+
+<ul>
+<% current_user do |u| %>
+	<li>
+		<%= button_to "What is my true shade?", true_shade_path(u.id) %>
+	</li>
+<% end %>
+</ul>

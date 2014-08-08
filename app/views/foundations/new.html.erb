@@ -1,0 +1,10 @@
+<h1>Add a Foundation to Review!</h1>
+
+<%= form_for @foundation do |f| %>
+	<%= f.text_field :brand, placeholder: "Brand" %>
+	<%= f.text_field :product, placeholder: "Product" %>
+	<%= f.text_field :shade, placeholder: "Shade" %>
+
+	<%= f.submit "Add the Foundation" %>
+	
+<% end %>

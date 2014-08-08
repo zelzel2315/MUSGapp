@@ -1,0 +1,10 @@
+<h1>My Foundations</h1>
+
+<ul>
+<% @foundations.each do |f| %>
+	<li>
+		<%= link_to "#{f.brand} #{f.product} #{f.shade}" %> 
+		<%= button_to "X", foundation_path(f.id), method: :delete %>
+	</li>
+<% end %>
+</ul>

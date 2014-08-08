@@ -1,0 +1,11 @@
+<h1>Find Your Shade! Sign up</h1>
+
+<%= form_for @user do |f| %>
+	<%= f.text_field :name, placeholder: "Name" %>
+	<%= f.text_field :email, placeholder: "Email" %>
+	<%= f.password_field :password, placeholder: "Password" %>
+	<%= f.password_field :password_confirmation, placeholder: "One More Time" %>
+	<%= f.text_field :skintone, placeholder: "Skintone (Fair, Light, Medium, Tan, Dark, Deep)" %>
+	<%= f.text_field :skintype, placeholder: "Skintype (Normal, Dry, Oily, Combo, Sensitive, Acne-prone, Mature)" %>
+	<%= f.submit "Join Us" %>
+<% end %>

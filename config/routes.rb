@@ -1,4 +1,16 @@
 MUSG::Application.routes.draw do
+
+  resources :users 
+  resource :session, only:[:new, :create, :destroy]
+  # resources :foundations
+  resources :true_shade
+
+  
+
+  # get 'users/index' => 'users#index'
+  #   as: :foundations
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

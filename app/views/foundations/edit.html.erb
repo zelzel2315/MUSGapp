@@ -1,0 +1,12 @@
+<h1> Edit this Foundation! </h1>
+
+<%= form_for @foundation do |f| %>
+	<%= f.text_field :brand, placeholder: "Brand" %>
+	<%= f.text_field :product, placeholder: "Product" %>
+	<%= f.text_field :shade, placeholder: "Shade" %>
+
+	<%= f.submit "Edit Foundation!" %>
+
+<% end %>
+
+<%= link_to "Back to list!", foundations_path %> 
