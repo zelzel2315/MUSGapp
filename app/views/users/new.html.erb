@@ -5,7 +5,12 @@
 	<%= f.text_field :email, placeholder: "Email" %>
 	<%= f.password_field :password, placeholder: "Password" %>
 	<%= f.password_field :password_confirmation, placeholder: "One More Time" %>
-	<%= f.text_field :skintone, placeholder: "Skintone (Fair, Light, Medium, Tan, Dark, Deep)" %>
-	<%= f.text_field :skintype, placeholder: "Skintype (Normal, Dry, Oily, Combo, Sensitive, Acne-prone, Mature)" %>
+	
+
+	<%= f.collection_select :foundation_id, Foundation.all, :id, :name %>
 	<%= f.submit "Join Us" %>
 <% end %>
+
+<!-- f.text_field :brand, placeholder: "Current Matching Foundation Brand" %> -->
+	<!-- f.text_field :product, placeholder: "Current Matching Foundation Product" %> -->
+	<!-- f.text_field :shade, placeholder: "Current Matching Foundation Shade" %> -->

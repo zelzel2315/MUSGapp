@@ -8,8 +8,6 @@
 </head>
 <body>
 
-<%= yield %>
-
 <% if current_user %>
 	Welcome <%= current_user.name %>
 	<%= link_to "Log Out", session_path, method: :delete %>
@@ -17,6 +15,8 @@
 	<%= link_to "Sign Up", new_user_path if !@is_signup %>
 	<%= link_to "Log In", new_session_path if !@is_login %>
 <% end %>
+
+<%= yield %>
 
 </body>
 </html>

@@ -1,10 +1,10 @@
 class TrueShade
   include Mongoid::Document
-  field :show, type: String
-  field :brand, type: String
-  field :product, type: String
-  field :shade, type: String
+  field :name, type: String
 
-  belongs_to :user 
-  belongs_to :foundation
+
+  has_many :users 
+  has_many :foundations
 end
+
+# for choiceinator, decison is true shade and criteria is foundation 

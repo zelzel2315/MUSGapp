@@ -1,14 +1,27 @@
 MUSG::Application.routes.draw do
 
-  resources :users 
-  resource :session, only:[:new, :create, :destroy]
-  # resources :foundations
-  resources :true_shade
+  resources :true_shades, only: [:index, :new, :create, :destroy, :edit] do
+    resources :foundations, only: [:index, :new, :create, :destroy] 
+  end
 
-  
+ # get 'true_shades/home' => 'true_shades#home', as: :home
+ #  root 'true_shades#home'
 
-  # get 'users/index' => 'users#index'
-  #   as: :foundations
+  resource :session, only: [:new, :create, :destroy]
+
+  resources :users
+
+  # get 'users' => 'users#index', as: :users
+  # get 'users/new' => 'users#new', as: :new_user
+  # post 'users' => 'users#create'
+  # get 'users/:id' => 'users#show', as: :user
+  # get 'users/:id/edit' => 'users#edit', as: :edit_user
+  # put 'users/:id' => 'users#update'
+  # patch 'users/:id' => 'users#update'
+  # delete 'users/:id' => 'users#destroy'
+
+
+  # get 'users/index' => 'users#index', as: :foundations
 
 
   # The priority is based upon order of creation: first created -> highest priority.

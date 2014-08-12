@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
 	def index
     @users = User.all
+    # if current_user
+    #   @true_shades = current_user.true_shade.all
+    #   @true_shade = current_user.true_shade.new
+    #   @foundations = @true_shade.foundations
+    #   @foundation = Foundation.new
+    # end
   end
 
   # prepare to show sign-up form
@@ -10,16 +16,18 @@ class UsersController < ApplicationController
   end
   # acutally build user
   def create
-    @user = User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation, :brand, :product, :shade))
+    @user = User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation, :foundation_id))
+    # @user.foundation = id([:name, :brand, :product, :shade, :true_shade_id])
     if @user.save
     	session[:user_id] = @user.id.to_s
-   		redirect_to true_shade_path
+   		redirect_to true_shades_path(@true_shades)
    	else 
       redirect_to new_user_path
     end
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def edit

@@ -6,14 +6,14 @@ class User
   field :name, type: String
   field :email, type: String
   field :password_digest, type: String
-  # field :skintone, type: String
   field :brand, type: String
   field :product, type: String
   field :shade, type: String
-  # field :skintype, type: String
+  field :true_shade_id, type: String
 
   has_secure_password
 
-  has_one :true_shade
+  belongs_to :foundation
   # has_many :foundations, through: :reviews
 end
+ 
