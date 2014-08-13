@@ -1,6 +1,6 @@
 MUSG::Application.routes.draw do
 
-  resources :true_shades, only: [:index, :new, :create, :destroy, :edit] do
+  resources :true_shades, only: [:index, :new, :show, :create, :destroy, :edit] do
     resources :foundations, only: [:index, :new, :create, :destroy] 
   end
 

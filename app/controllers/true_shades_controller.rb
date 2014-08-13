@@ -1,4 +1,7 @@
 class TrueShadesController < ApplicationController
+  # before_action :get_true_shade
+
+
   def home
     @user = User.new
   end
@@ -10,7 +13,7 @@ class TrueShadesController < ApplicationController
       return
     end 
     # @true_shades = TrueShade.where(user_id: current_user.id)
-    @true_shades = current_user.foundations.true_shade
+    @true_shades = current_user.foundation.true_shade
   end
 
   def new
@@ -35,10 +38,18 @@ class TrueShadesController < ApplicationController
     # end    
   end
 
+  def show
+    @true_shade = TrueShade.find(params[:id])
+    @foundation = Foundation.find(true_shade_id: @true_shade.id).all
+    # @foundations = Foundation.find(params[:id])
+  end
+
   def destroy
     TrueShade.find(params[:id]).destroy
     redirect_to true_shades_path
   end
+
+
 end
 
 

@@ -3,18 +3,10 @@ class Foundation
 
   field :show, type: String
   field :name, type: String
-  # field :brand, type: String
-  # field :product, type: String
-  # field :shade, type: String
   field :true_shade_id, type: String
-  # field :coverage, type: String
-  # field :finish, type: String
-  # field :formulation, type: String
-  # field :best_for, type: String
-  # field :price_range, type: Float 
-  # field :rating, type: Integer
 
-  belongs_to :true_shade
+
+  belongs_to :true_shade 
   has_many :users
   # has_many :users, through: :reviews
 

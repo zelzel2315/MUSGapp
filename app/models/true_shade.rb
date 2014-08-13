@@ -7,4 +7,4 @@ class TrueShade
   has_many :foundations
 end
 
-# for choiceinator, decison is true shade and criteria is foundation 
+# for choiceinator, decison is true shade and criteria is foundation  

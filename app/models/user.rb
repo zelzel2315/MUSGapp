@@ -11,8 +11,11 @@ class User
   field :shade, type: String
   field :true_shade_id, type: String
 
-  has_secure_password
 
+
+  has_secure_password
+  
+  belongs_to :true_shade
   belongs_to :foundation
   # has_many :foundations, through: :reviews
 end

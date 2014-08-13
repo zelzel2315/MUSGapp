@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	def index
+  def index
     @users = User.all
     # if current_user
     #   @true_shades = current_user.true_shade.all
@@ -17,11 +17,16 @@ class UsersController < ApplicationController
   # acutally build user
   def create
     @user = User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation, :foundation_id))
+    @user_foundation = @user.foundation_id
+    @foundation = Foundation.find(@user_foundation)
+    @fts = @foundation.true_shade
+    @true_shade = TrueShade.find(@fts)
+    @user.true_shade = @true_shade 
     # @user.foundation = id([:name, :brand, :product, :shade, :true_shade_id])
     if @user.save
-    	session[:user_id] = @user.id.to_s
-   		redirect_to true_shades_path(@true_shades)
-   	else 
+      session[:user_id] = @user.id.to_s
+      redirect_to true_shades_path(@true_shades)
+    else 
       redirect_to new_user_path
     end
   end
@@ -31,11 +36,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-  	 @user = User.new(params.require(:user).permit(:brand, :product, :shade))
+     @user = User.new(params.require(:user).permit(:brand, :product, :shade))
     if @user.save
-    	session[:user_id] = @user.id.to_s
-   		redirect_to true_shade_path
-   	else 
+      session[:user_id] = @user.id.to_s
+      redirect_to true_shade_path
+    else 
       redirect_to new_user_path
     end
   end
