@@ -7,7 +7,7 @@
 	<%= f.password_field :password_confirmation, placeholder: "One More Time" %>
 	
 
-	<%= f.collection_select :foundation_id, Foundation.all, :id, :name %>
+	Choose your current matching foundation<%= f.collection_select :foundation_id, Foundation.all, :id, :name %>
 	<%= f.submit "Join Us" %>
 <% end %>
 
