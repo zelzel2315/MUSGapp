@@ -40,7 +40,7 @@ class TrueShadesController < ApplicationController
 
   def show
     @true_shade = TrueShade.find(params[:id])
-    @foundation = Foundation.find(true_shade_id: @true_shade.id).all
+    @foundations = Foundation.all
     # @foundations = Foundation.find(params[:id])
   end
 

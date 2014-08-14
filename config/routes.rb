@@ -1,7 +1,7 @@
 MUSG::Application.routes.draw do
 
   resources :true_shades, only: [:index, :new, :show, :create, :destroy, :edit] do
-    resources :foundations, only: [:index, :new, :create, :destroy] 
+    resources :foundations, only: [:index, :new, :show, :create, :destroy] 
   end
 
  # get 'true_shades/home' => 'true_shades#home', as: :home

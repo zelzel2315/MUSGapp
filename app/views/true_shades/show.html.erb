@@ -1,6 +1,13 @@
 <h1>Show True Shade</h1>
 
+
+
 <%= @true_shade.name %>
-
-
+	<ul>
+		<% @foundations.each do |foundation| %>
+			<% if foundation.true_shade == @true_shade %>
+		<li><%= link_to foundation.name, true_shade_foundations_path(foundation) %></li>
+	<% end %>
+	</ul>
+<% end %>
 	

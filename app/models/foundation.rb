@@ -3,7 +3,9 @@ class Foundation
 
   field :show, type: String
   field :name, type: String
-  field :true_shade_id, type: String
+  field :brand, type: String
+  field :product, type: String
+  field :shade, type: String
 
 
   belongs_to :true_shade 

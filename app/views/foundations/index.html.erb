@@ -3,7 +3,7 @@
 <ul>
 <% @foundations.each do |f| %>
 	<li>
-		<%= link_to "#{f.brand} #{f.product} #{f.shade}" %> 
+		<%= link_to "f.name", true_shade_foundation_path(f) %> 
 		
 	</li>
 <% end %>
