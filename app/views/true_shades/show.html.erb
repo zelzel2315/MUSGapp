@@ -6,7 +6,7 @@
 	<ul>
 		<% @foundations.each do |foundation| %>
 			<% if foundation.true_shade == @true_shade %>
-		<li><%= link_to foundation.name, true_shade_foundations_path(foundation) %></li>
+		<li><%= link_to foundation.name, true_shade_foundation_path(foundation.true_shade.id, foundation.id) %></li>
 	<% end %>
 	</ul>
 <% end %>

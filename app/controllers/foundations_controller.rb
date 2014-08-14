@@ -1,12 +1,12 @@
 class FoundationsController < ApplicationController
-  before_action :get_true_shade
+  # before_action :get_true_shade
 
   def index
-    @foundations = @true_shade.foundations
+    @foundations = @true_shade_id.foundations
   end
 
   def new
-    @foundation= Foundation.new
+    @foundation = Foundation.new
   end
 
   def create
@@ -21,16 +21,20 @@ class FoundationsController < ApplicationController
     end
   end
 
+  def show
+    @foundation = Foundation.find(params[:id])
+  end
+
   def destroy
     Foundation.find(params[:id]).destroy
     redirect_to true_shade_foundations_path
   end
 
-private
-  def get_true_shade
-    # Find our parent decision that we should attach to
-    @true_shade = TrueShade.find(params[:true_shade_id])
-  end
+# private
+#   def get_true_shade
+#     # Find our parent decision that we should attach to
+#     @true_shade = TrueShade.find(params[:true_shade_id])
+#   end
 
   # def check_security
   #   # If they're not logged in or they don't own this decision, boot them to the home page

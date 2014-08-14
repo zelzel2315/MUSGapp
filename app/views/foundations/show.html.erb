@@ -1,7 +1,21 @@
-<h1><%= @foundation.name %></h1>
+<h1>show me the foundation I clicked</h1>
 
-<p> <%= @foundation.brand %> <%= @foundation.product%> <%= @foundation.shade %> </p>
 
-<%= link_to "Delete this foundation!", :foundation, method: :delete, data: { confirm: "Are you sure you want to delete #{foundation.name}?"} %>
 
-<%= link_to "Back to the list!", foundations_path %>
+	<p>
+  <strong>Brand:</strong>
+  <%= @foundation.brand %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @foundation.product %>
+</p>
+
+<p>
+  <strong>Shade:</strong>
+  <%= @foundation.shade %>
+</p>
+
+
+

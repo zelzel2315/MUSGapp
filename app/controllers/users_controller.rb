@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id.to_s
       redirect_to true_shade_path
     else 
-      redirect_to new_user_path
+      render 'new'
     end
   end
 
