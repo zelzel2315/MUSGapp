@@ -1,0 +1,32 @@
+<%= form_for @foundation, html: { class: 'form' } do |f| %>
+    <% if @foundation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@foundation.errors.count, "error") %> prohibited this foundation from being saved:</h2>
+
+        <ul>
+        <% @foundation.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :brand %><br>
+      <%= f.text_field :brand, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :product %><br>
+      <%= f.text_field :product, class: 'form-control', required: true %>
+    </div>
+
+     <div class="form-group">
+      <%= f.label :shade %><br>
+      <%= f.number_field :shade, class: 'form-control', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Submit!", class: 'btn btn-primary btn-large' %>
+    </div>
+<% end %>

@@ -1,4 +1,4 @@
-<h1>Find Your Shade! Sign up</h1>
+<h1>Find Your Matching Foundations! Sign up</h1>
 
 <%= form_for @user do |f| %>
 	<%= f.text_field :name, placeholder: "Name" %>
@@ -7,7 +7,7 @@
 	<%= f.password_field :password_confirmation, placeholder: "One More Time" %>
 	
 
-	Choose your current matching foundation<%= f.collection_select :foundation_id, Foundation.all, :id, :name %>
+	<br>Choose your current matching foundation<%= f.collection_select :foundation_id, Foundation.all, :id, :name %>
 	<%= f.submit "Join Us" %>
 <% end %>
 

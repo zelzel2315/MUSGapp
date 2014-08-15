@@ -9,5 +9,8 @@
 		<li><%= link_to foundation.name, true_shade_foundation_path(foundation.true_shade.id, foundation.id) %></li>
 	<% end %>
 	</ul>
+
 <% end %>
+
+<br><%= link_to "Click to add another foundation in your true shade!!", new_true_shade_foundation_path(@true_shade, @foundation) %>
 	

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,19 +8,70 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Foundations Galore</a>
+
+     <!-- logo -->
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Test</a></li>
-        <li><a href="#meet">Test2</a></li>
-        <li><a href="#houses">Test3</a></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+
+      <% if current_user %>
+
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          Hi, <%= current_user.name %>
+          <span class="caret"></span>
+        </a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <%= link_to 'Log me out', session_path, method: :delete %>
+            </li>
+            <li class="divider"></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </li>
+
+      <% else %>
+
+        <li class="dropdown">
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Log In or Sign Up
+            <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <%= link_to "Sign Up", new_user_path %>
+            </li>
+            <li>
+              <%= link_to 'Log In', new_session_path  %> 
+            </li>
+            <li class="divider"></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+
+        </li>
+
+
+
+      <% end %>
+        
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-  </nav>
-
-
-
+</nav>

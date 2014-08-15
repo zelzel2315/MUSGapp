@@ -5,7 +5,8 @@ gem 'rails', '4.0.4'
 gem 'mongoid', github: 'mongoid/mongoid'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.2'
+gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-sass', '~> 3.1.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -42,4 +43,3 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "mongoid-paperclip", "~> 0.0.8", :require => "mongoid_paperclip"
-gem "aws-s3", :require => "aws/s3"

@@ -7,7 +7,7 @@ class FoundationsController < ApplicationController
 
   def new
     @foundation = Foundation.new
-  end
+  end 
 
   def create
     @foundation = Foundation.new(
@@ -16,8 +16,9 @@ class FoundationsController < ApplicationController
     # Attach this criterion to a decision
     # @user.foundation = id {:name, :brand, :product, :shade, :true_shade_id}
     # user.foundation.true_shade = @true_shade
+    foundation.true_shade = @foundation 
     if user.foundation.save
-      redirect_to true_shade_foundations_path(@true_shade, @foundation)
+      redirect_to new_true_shade_foundations_path(@true_shade.id)
     end
   end
 
@@ -27,7 +28,7 @@ class FoundationsController < ApplicationController
 
   def destroy
     Foundation.find(params[:id]).destroy
-    redirect_to true_shade_foundations_path
+    redirect_to true_shade_foundations_path(@true_shade.id)
   end
 
 # private

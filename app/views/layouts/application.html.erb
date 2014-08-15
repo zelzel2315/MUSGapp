@@ -7,19 +7,13 @@
 
     <!-- to look better on mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+ 
 	  <%= csrf_meta_tags %>
 	</head>
 
 	<body class="<%= params[:controller] %>">
 
-	<% if current_user %>
-		Welcome <%= current_user.name %>
-		<%= link_to "Log Out", session_path, method: :delete %>
-	<% else %>
-		<%= link_to "Sign Up", new_user_path if !@is_signup %>
-		<%= link_to "Log In", new_session_path if !@is_login %>
-	<% end %>
+
 		<%= render 'partials/nav' %>
 
 		<div class="container">

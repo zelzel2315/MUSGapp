@@ -1,5 +1,14 @@
-<h1>Show</h1>
-Your true shade is: <%= @user.foundation.true_shade.name %>
-<%= link_to "Click to see more foundations in your true shade", true_shade_path(@user.foundation.true_shade) %>
+<!DOCTYPE html>
+	<head>
+		<title>
+		</title>
+	</head>
+	<body>
+
+		<h1>Your True Shade</h1>
+		<br>Your true shade is: <%= @user.foundation.true_shade.name %>
+			<%= link_to "Click to see more foundations in your true shade", true_shade_path(@user.foundation.true_shade) %>
 
 
+	</body>
+</html>
