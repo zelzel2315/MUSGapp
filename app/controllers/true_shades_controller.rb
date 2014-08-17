@@ -14,7 +14,7 @@ class TrueShadesController < ApplicationController
     end 
     # @true_shades = TrueShade.where(user_id: current_user.id)
     @true_shades = current_user.foundation.true_shade
-  end
+  end 
 
   def new
     if current_user
@@ -26,7 +26,7 @@ class TrueShadesController < ApplicationController
 
   def create
     # Make a new true shade object that is attached to the user
-    true_shade = current_user.true_shade.new(params.require(:true_shade).permit(:name))
+    true_shade = current_user.true_shade.new(params.require(:true_shade).permit(:name, :description))
     # With this decision object, attach it to the user
     # decision.user = current_user
     if true_shade.save

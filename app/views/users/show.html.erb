@@ -6,9 +6,11 @@
 	<body>
 
 		<h1>Your True Shade</h1>
+		<br>Your Current Matching Foundation: <%= @user.foundation.name %>
 		<br>Your true shade is: <%= @user.foundation.true_shade.name %>
-			<%= link_to "Click to see more foundations in your true shade", true_shade_path(@user.foundation.true_shade) %>
+		<br><%= @user.foundation.true_shade.description %>
+			<br><%= link_to "Click to see more foundations in your true shade", true_shade_path(@user.foundation.true_shade) %>
 
-
+ 
 	</body>
 </html>

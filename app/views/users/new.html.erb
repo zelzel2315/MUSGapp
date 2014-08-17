@@ -1,15 +1,15 @@
-<h1>Find Your Matching Foundations! Sign up</h1>
+<center><br><h1>Find Your Matching Foundations! Sign up</h1>
 
-<%= form_for @user do |f| %>
+<%= form_for @user do |u| %>
 	<%= f.text_field :name, placeholder: "Name" %>
 	<%= f.text_field :email, placeholder: "Email" %>
 	<%= f.password_field :password, placeholder: "Password" %>
 	<%= f.password_field :password_confirmation, placeholder: "One More Time" %>
 	
 
-	<br>Choose your current matching foundation<%= f.collection_select :foundation_id, Foundation.all, :id, :name %>
+	<br><br>Choose your current matching foundation <%= f.collection_select :foundation_id, Foundation.all, :id, :name %>
 	<%= f.submit "Join Us" %>
-<% end %>
+<% end %></center>
 
 <!-- f.text_field :brand, placeholder: "Current Matching Foundation Brand" %> -->
 	<!-- f.text_field :product, placeholder: "Current Matching Foundation Product" %> -->

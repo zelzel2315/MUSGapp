@@ -7,23 +7,32 @@ class FoundationsController < ApplicationController
 
   def new
     @foundation = Foundation.new
-  end 
+  end  
 
   def create
     @foundation = Foundation.new(
-      params.require(:foundation).permit(:true_shade)
+      params.require(:foundation).permit(:true_shade, :brand, :product, :shade)
       )
     # Attach this criterion to a decision
-    # @user.foundation = id {:name, :brand, :product, :shade, :true_shade_id}
     # user.foundation.true_shade = @true_shade
     foundation.true_shade = @foundation 
     if user.foundation.save
-      redirect_to new_true_shade_foundations_path(@true_shade.id)
+      redirect_to new_true_shade_foundations_path(@true_shade.id) 
     end
   end
 
   def show
     @foundation = Foundation.find(params[:id])
+  end
+
+  def edit
+     @user = User.new(params.require(:user).permit(:brand, :product, :shade))
+    if @user.save
+      session[:user_id] = @user.id.to_s
+      redirect_to true_shade_path
+    else 
+      render 'new'
+    end
   end
 
   def destroy

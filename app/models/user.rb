@@ -11,7 +11,12 @@ class User
   field :shade, type: String
   field :true_shade_id, type: String
 
+  validates :name, presence: true
 
+  validates :email, presence: true
+  validates_uniqueness_of :email
+
+  validates :foundation_id, presence: true
 
   has_secure_password
   

@@ -6,17 +6,11 @@ class UsersController < ApplicationController
   # prepare to show sign-up form
   def new
     @user = User.new
-    @is_signup = true
-  end
+    @is_signup = true 
+  end 
   # acutally build user
   def create
     @user = User.new(params.require(:user).permit(:name, :email, :password, :password_confirmation, :foundation_id))
-    # @user_foundation = @user.foundation_id
-    # @foundation = Foundation.find(@user_foundation)
-    # @fts = @foundation.true_shade
-    # @true_shade = TrueShade.find(@fts)
-    # @user.true_shade = @true_shade 
-    # @user.foundation = id([:name, :brand, :product, :shade, :true_shade_id])
     if @user.save
       session[:user_id] = @user.id.to_s
       redirect_to user_path(@user)

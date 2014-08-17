@@ -1,8 +1,6 @@
 <h1>TrueShade#index</h1>
 
 
-<% @true_shade.foundation.each do |s| %>
-      <% if foundation.true_shade = @true_shade %>
-      <%= foundation.name  %>
-      <% end %>
-  <% end %>
+<br>Your true shade is: <%= @user.foundation.true_shade.name %>
+		<br><%= @user.foundation.true_shade.description %>
+			<br><%= link_to "Click to see more foundations in your true shade", true_shade_path(@user.foundation.true_shade) %>
